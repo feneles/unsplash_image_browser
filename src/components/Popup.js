@@ -14,7 +14,7 @@ history.push(`/search/${text}`)
   if(!isOpen) return null;
   return (
     <div className="popup">
-      <div className="popup_content">
+    
         {items && 
           items.map((item, index) => {
             return (
@@ -26,7 +26,7 @@ history.push(`/search/${text}`)
         }
         {!items && <p className="warning">Nothing Found</p>}
       </div>
-    </div>
+  
   )
 }
 
