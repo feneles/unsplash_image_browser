@@ -1,0 +1,24 @@
+.search {
+  position: relative;
+  height: 40px;
+}
+
+.search_button {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  transform: translateY(-50%);
+  padding: 9px 8px;
+}
+.search_button:hover {
+  cursor: pointer;
+}
+
+input {
+  border-radius: 5px;
+  padding-left: 40px;
+  width: 100%;
+  height: 40px;
+}
