@@ -1,8 +1,18 @@
 import React from "react";
 import Search from "../components/Search";
 import "../styles/HomePage.css";
+import { useHistory} from "react-router-dom";
 
 function HomePage() {
+
+  const history = useHistory();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    history.push(`/search/${e.target.textContent}`);
+  };
+
+
   return (
     <div className="homePage">
       <div className="homePage_container">
@@ -12,7 +22,7 @@ function HomePage() {
           everywhere.
         </p>
         <Search />
-        <p>Trending: flower, wallpapers, backgrounds, happy, love</p>
+        <p>Trending: <span onClick={handleSubmit}>flower</span>, <span onClick={handleSubmit}>wallpapers</span>, <span onClick={handleSubmit}>backgrounds</span>, <span onClick={handleSubmit}>happy</span>, <span onClick={handleSubmit}>love</span></p>
       </div>
     </div>
   );

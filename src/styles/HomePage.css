@@ -23,3 +23,8 @@
 .homePage_container p:last-child {
   margin-top: 15px;
 }
+
+span {
+  cursor: pointer;
+  text-decoration: underline;
+}

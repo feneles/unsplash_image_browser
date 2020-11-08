@@ -26,6 +26,7 @@ function Search() {
   const handleSubmit = (e) => {
     e.preventDefault();
     history.push(`/search/${query}`);
+    setIsOpen(false)
   };
 
   useEffect(() => {
