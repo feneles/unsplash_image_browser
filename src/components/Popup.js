@@ -8,7 +8,7 @@ function Popup({ items, isOpen, setQuery, setItems, history }) {
     history.push(`/search/${text}`);
   };
 
-  console.log(items)
+ 
 
   if (!isOpen) return null;
   return (

@@ -14,7 +14,6 @@ function SearchPage() {
   //normalnie wrzuciłbym do process.env, na potrzeby zadania umieszcze tutaj
 
   const handleClick = (photo) => {
-    console.log(photo);
     setSelectedImage(photo);
     setIsOpen(true);
   };
@@ -27,7 +26,6 @@ function SearchPage() {
       axios
         .get(url)
         .then((response) => {
-          console.log(response);
           setResults(response.data.results);
         })
         .catch((error) => {
