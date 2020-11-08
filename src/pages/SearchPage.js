@@ -6,17 +6,15 @@ import Modal from "../components/Modal";
 import axios from "axios";
 
 function SearchPage() {
-
   const [isOpen, setIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const [results, setResults] = useState([]);
-
 
   const userId = "V-YBC9sY1Y9NWo4-BgqQKMpX2mj8vzaIZuSH3gzZVyk";
   //normalnie wrzuciłbym do process.env, na potrzeby zadania umieszcze tutaj
 
   const handleClick = (photo) => {
-    console.log(photo)
+    console.log(photo);
     setSelectedImage(photo);
     setIsOpen(true);
   };
@@ -27,18 +25,17 @@ function SearchPage() {
     const url = `https://api.unsplash.com/search/photos?per_page=30&page=1&query=${searched}&client_id=${userId}`;
     const apiRequest = () => {
       axios
-      .get(url)
-      .then((response) => {
-        console.log(response)
-        setResults(response.data.results)
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    }
-    return apiRequest()
-    
-  },[]);
+        .get(url)
+        .then((response) => {
+          console.log(response);
+          setResults(response.data.results);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+    return apiRequest();
+  }, [searched]);
 
   return (
     <div className="searchPage">
@@ -50,13 +47,11 @@ function SearchPage() {
       </div>
       <div className="pictureBox">
         {results.map((photo) => {
-  
           return (
             <img
-            
               onClick={() => {
-               
-                handleClick(photo)}}
+                handleClick(photo);
+              }}
               className="picture"
               id={photo.id}
               src={photo.urls.small}
@@ -65,14 +60,13 @@ function SearchPage() {
             />
           );
         })}
-        
+
         <Modal
           setSelectedImage={setSelectedImage}
           selectedImage={selectedImage}
           isOpen={isOpen}
           setIsOpen={setIsOpen}
         />
-        
       </div>
     </div>
   );

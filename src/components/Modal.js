@@ -7,7 +7,6 @@ function Modal({isOpen, setIsOpen, selectedImage, setSelectedImage}) {
   const handleClick = () => {
     setIsOpen(false)
     setSelectedImage(null)
-
   }
   
   return (
