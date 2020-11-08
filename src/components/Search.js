@@ -6,7 +6,7 @@ import data from "../data.json";
 
 function Search() {
   let { searched } = useParams();
-  const [query, setQuery] = useState(searched);
+  const [query, setQuery] = useState(searched || "");
   const [isOpen, setIsOpen] = useState(false);
   const [items, setItems] = useState([]);
 
@@ -15,11 +15,12 @@ function Search() {
   const history = useHistory();
 
   const handleChange = (e) => {
+    setQuery(e.target.value);
+    setItems(data.filter((item) => item.text.includes(query.toLowerCase())));
     if (e.target.value.length > 2) {
       setIsOpen(true);
     } else setIsOpen(false);
-    setQuery(e.target.value);
-    setItems(data.filter((item) => item.text.includes(query)));
+    
   };
 
   const handleSubmit = (e) => {

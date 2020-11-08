@@ -2,6 +2,7 @@
   width: 100vw;
   min-height: 100vh;
   background-image: url("../img/bg.jpg");
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,6 +10,7 @@
 }
 .homePage_container {
   color: white;
+  margin: 10px;
 }
 .homePage_container h1 {
   margin-top: 10px;

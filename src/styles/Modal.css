@@ -50,3 +50,15 @@
   color: white;
   font-size: 25px;
 }
+
+@media only screen and (max-width: 1024px) {
+  .modal_infoBox {
+    margin-top: 0.5rem;
+  }
+  .modal_author {
+    font-size: 15px;
+  }
+  .modal_placeInfo {
+    font-size: 15px;
+  }
+}
