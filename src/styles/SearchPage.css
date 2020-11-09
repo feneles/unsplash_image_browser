@@ -38,4 +38,11 @@
   .inputContainer {
     width: 80%;
   }
+  .picture {
+    width: 35vw;
+    height: 40vh;
+  }
+  .logo {
+    margin: 1rem 1rem;
+  }
 }
